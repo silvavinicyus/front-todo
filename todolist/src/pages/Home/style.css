@@ -1,0 +1,23 @@
+.main {     
+    display: flex;    
+    flex-direction: row;        
+    justify-content: space-between;
+    align-items: center;
+}
+
+.create{
+    height: 90vh;
+    width: 60vw;    
+    margin-right: 4vw;
+    margin-bottom: 2vh ;
+    background: var(--secundary-color);
+    border-radius: 10px;   
+    display: flex;    
+    justify-content: center;
+}
+
+.list{
+    display: flex;   
+    align-self: center; 
+    flex-direction: column;    
+}

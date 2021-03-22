@@ -1,3 +1,5 @@
+import { useMutation } from '@apollo/client';
+import gql from 'graphql-tag';
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { useHistory } from 'react-router';
 import LateralMenu from '../components/LateralMenu';
@@ -8,7 +10,22 @@ const CreateTodo = () => {
 
     const [seletedName, setSelectedName] = useState<String>('');
     const [seletedDescription, setSelectedDescription] = useState<String>('');
-    const [seletedHour, setSelectedHour] = useState<String>('');
+    const [seletedHour, setSelectedHour] = useState<String>('');    
+    const CREATE_TODO = gql`
+        mutation createToDo(
+            $name: String!
+            $description: String!
+            $hours: String!
+        ) {
+            id
+            name
+            description
+            done
+            created_at
+            updated_at
+        }
+    `;
+    const[createTodo] = useMutation(CREATE_TODO);
 
     const history = useHistory();
 
@@ -39,22 +56,29 @@ const CreateTodo = () => {
 
 
 
-    function handleSubmit(event: FormEvent){
+    async function HandleSubmit(event: FormEvent){
         event.preventDefault();
 
         const name = seletedName;
-        const hour = seletedHour;
-        const description = seletedDescription;
+        const hours = seletedHour;
+        const description = seletedDescription;        
 
         const data = {
             name,
-            hour,
+            hours,
             description
         }
+        
+        try{
+            createTodo({variables: data});
 
-       alert('Tarefa cadastrada');        
+            alert('Tarefa criada: ');
 
-        history.push('/');
+            history.push('/');
+        } catch (err) {
+            alert('Erro na criação da tarefa:\n Erro: ');
+        }
+       
     }
 
     return (
@@ -69,8 +93,7 @@ const CreateTodo = () => {
                         <h1>Crie a sua tarefa</h1>
                     </div>
                 
-
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={HandleSubmit}>
                         <fieldset>
                             <legend>Informações</legend>
                         
