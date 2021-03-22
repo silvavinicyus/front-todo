@@ -1,0 +1,96 @@
+.main {     
+    display: flex;    
+    flex-direction: row;        
+    justify-content: space-between;
+    align-items: center;
+}
+
+.create{
+    height: 90vh;
+    width: 60vw;    
+    margin-right: 4vw;
+    margin-bottom: 2vh ;
+    background: var(--secundary-color);
+    border-radius: 10px;   
+    display: flex;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+
+legend {
+    font-size: 30px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+#label1{
+    margin-top: 5vh;
+}
+
+.field label {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.field input[type=text] {
+    flex: 1;
+    background: #F0F0F5;
+    border-radius: 8px;
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    color: #6C6C80;    
+}
+
+
+.form fieldset {    
+    margin-top: 4vh;
+    border: none;    
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.form .field {        
+    display: flex;
+    flex-direction: column;    
+}
+
+.form label {    
+    margin-top: 2vh;    
+}
+
+
+button {    
+    margin-right: 3vw;
+    width: 260px;
+    height: 56px;
+    background: #34CB79;
+    border-radius: 8px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+    border: 0;    
+    align-self: flex-end;
+    float: right;
+    margin-top: 20vh;    
+    transition: background-color 0.2s;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #2FB86E;
+  }

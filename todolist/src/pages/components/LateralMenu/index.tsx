@@ -29,13 +29,13 @@ const LateralMenu = () => {
                 <div id="item">
                     <Link to="/" id = "button1"> 
                         <strong>
-                            Listar
+                            Lista de tarefas
                         </strong>                        
                     </Link>
 
                     <Link to="/create-todo" id = "button2"> 
                         <strong>
-                            Cadastrar
+                            Cadastro de tarefas
                         </strong>                        
                     </Link>                    
                 </div>

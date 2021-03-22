@@ -1,8 +1,8 @@
 .principal {
-    margin-left: 2%;
-    margin-top: 2%;
-    margin-right: 4%;
-    margin-bottom: 2%;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    margin-right: 4vh;
+    margin-bottom: 2vw;
     background: var(--secundary-color);
     width: 25vw;
     height: 90vh;
