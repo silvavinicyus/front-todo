@@ -1,10 +1,16 @@
 import React from 'react';
 
+import LateralMenu from '../components/LateralMenu';
+
 const Home = () => {
     return (
         <div id="page-home">
-            <h1>Testando o teste</h1>
+            <LateralMenu/>
+
+            <div></div>
         </div>
+
+
     );
 }
 
