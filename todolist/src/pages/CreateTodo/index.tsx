@@ -11,20 +11,30 @@ const CreateTodo = () => {
     const [seletedName, setSelectedName] = useState<String>('');
     const [seletedDescription, setSelectedDescription] = useState<String>('');
     const [seletedHour, setSelectedHour] = useState<String>('');    
+
     const CREATE_TODO = gql`
-        mutation createToDo(
+        mutation creteToDo(
             $name: String!
             $description: String!
             $hours: String!
-        ) {
-            id
-            name
-            description
-            done
-            created_at
-            updated_at
+        ){
+            createToDo(
+                data: {
+                    name: $name
+                    description: $description
+                    hours: $hours 
+                }
+            ) {
+                id
+                name
+                description  
+                done          
+                created_at
+                updated_at
+            }
         }
     `;
+
     const[createTodo] = useMutation(CREATE_TODO);
 
     const history = useHistory();
